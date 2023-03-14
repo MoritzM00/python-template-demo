@@ -17,4 +17,4 @@ docs_view:
 	PYTHONPATH=src pdoc src --http localhost:8080
 
 docs_save:
-	PYTHONPATH=src pdoc src -o docs
+	PYTHONPATH=src pdoc src -f -o docs

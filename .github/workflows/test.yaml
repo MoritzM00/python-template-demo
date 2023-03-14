@@ -1,29 +1,15 @@
 name: Run Tests
-on: [push, pull_request]
+on: [push, pull_request, workflow_call]
 jobs:
   test:
-    name: Run tests
+    name: Run Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        id: checkout
         uses: actions/checkout@v3
 
-      - name: Environment setup
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.9
-
-      - name: Load cached Poetry installation
-        id: cached-poetry
-        uses: actions/cache@v3
-        with:
-          path: ~/.local  # the path depends on the OS
-          key: poetry-0  # increment to reset cache
-      - name: Install Poetry
-        if: steps.cached-poetry.outputs.cache-hit != 'true'
-        uses: snok/install-poetry@v1
-
+      - name: Setup python and poetry
+        uses: ./.github/actions/setup.yaml
 
       - name: Install packages
         run: poetry install
