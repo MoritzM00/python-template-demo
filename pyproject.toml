@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "package-name"
-version = "0.1.7"
+version = "0.1.8"
 description = ""
 authors = ["Moritz Mistol <moritz.mistol@gmail.com>"]
 readme = "README.md"
