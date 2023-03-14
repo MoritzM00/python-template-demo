@@ -4,7 +4,7 @@ name: Deploy docs to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: main
     tags:
       - "*"
 
@@ -35,10 +35,23 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Environment setup
+      - name: Python setup
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
+      - name: Load cached Poetry installation
+        id: cached-poetry
+        uses: actions/cache@v3
+        with:
+          path: ~/.local  # the path depends on the OS
+          key: poetry-0  # increment to reset cache
+      - name: Install Poetry
+        if: steps.cached-poetry.outputs.cache-hit != 'true'
+        uses: snok/install-poetry@v1
+      - name: Install packages
+        run: poetry install
+      - name: Run pdoc
+        run: make docs_save
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
