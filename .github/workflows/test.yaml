@@ -1,4 +1,4 @@
-name: Run Tests
+name: Tests
 on: [push, pull_request, workflow_call]
 jobs:
   test:
@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup python and poetry
         uses: ./.github/actions/setup.yaml
