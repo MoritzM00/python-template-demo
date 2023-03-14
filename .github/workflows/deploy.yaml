@@ -2,9 +2,10 @@
 name: Deploy docs to Pages
 
 on:
-  # Runs on pushes targeting the default branch
+  # Runs on pushes targeting the default branch with a tag
   push:
-    branches: main
+    branches:
+      - main
     tags:
       - "*"
 
