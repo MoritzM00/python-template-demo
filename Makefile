@@ -14,7 +14,7 @@ test:
 	poetry run pytest
 
 docs_view:
-	PYTHONPATH=src pdoc --config show_source_code=False src --http localhost:8080
+	PYTHONPATH=src pdoc src --http localhost:8080
 
 docs_save:
 	PYTHONPATH=src pdoc src -o docs
