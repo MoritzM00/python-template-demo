@@ -33,17 +33,23 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: 3.9
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
+          cache: "poetry"
       - name: Install packages
         run: poetry install
 
       - name: Build docs
         run: poetry run pdoc src --html -f -o docs
+
+      - name: Move docs
+        run: mv docs/src/* docs && rm -rf docs/src
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
