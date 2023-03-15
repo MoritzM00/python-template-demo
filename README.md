@@ -40,12 +40,7 @@ poetry add <package-name>
 
 ### Documentation
 
-The Documentation is deployed to GitHub Pages when a Tag is included in the commit.
-You can do this easily by running:
-
-```bash
-poetry version <patch|minor|major>
-```
+The Documentation is automacially deployed to GitHub Pages.
 
 To view the documentation locally, run:
 
