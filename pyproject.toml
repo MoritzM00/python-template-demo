@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "package-name"
+name = "demo-python-template"
 version = "0.1.8"
 description = ""
 authors = ["Moritz Mistol <moritz.mistol@gmail.com>"]

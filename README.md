@@ -1,7 +1,8 @@
-# Light-weight Data Science Template
+# Demo for the light-weight Python Template
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/MoritzM00/python-template/main.svg)](https://results.pre-commit.ci/latest/github/MoritzM00/python-template/main)
 [![Tests](https://github.com/MoritzM00/python-template/actions/workflows/test.yaml/badge.svg)](https://github.com/MoritzM00/python-template/actions/workflows/test.yaml)
+[![Docs](https://github.com/MoritzM00/python-template-demo/actions/workflows/deploy.yaml/badge.svg)](https://github.com/MoritzM00/python-template-demo/actions/workflows/deploy.yaml)
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
 
