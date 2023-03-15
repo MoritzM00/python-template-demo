@@ -34,7 +34,7 @@ To install new PyPI packages, run:
 poetry add <package-name>
 ```
 
-### Auto-generate API documentation
+### Documentation
 
 The Documentation is deployed to GitHub Pages when a Tag is included in the commit.
 You can do this easily by running:
