@@ -8,7 +8,10 @@
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black
 
-Light-weight Python Template for Data Science and Machine Learning
+This is a demo repository of the Light-weight Python Template.
+It contains a minimal set of files to get started with a new python project. It does not force you to use any data-science specific libraries, but provides a set of tools that are useful for most projects.
+
+It is intended to be used for Data Science and Machine Learning projects with small to medium sized modules.
 
 ## Quick Start
 
