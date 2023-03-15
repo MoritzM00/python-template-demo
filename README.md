@@ -1,4 +1,4 @@
-# Package-name
+# Light-weight Data Science Template
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/MoritzM00/python-template/main.svg)](https://results.pre-commit.ci/latest/github/MoritzM00/python-template/main)
 [![Tests](https://github.com/MoritzM00/python-template/actions/workflows/test.yaml/badge.svg)](https://github.com/MoritzM00/python-template/actions/workflows/test.yaml)
@@ -10,7 +10,41 @@
 
 Light-weight Python Template for Data Science and Machine Learning
 
-## How to Setup the Template
+## Quick Start
 
-1. Setup Pre-Commit CI: <https://pre-commit.ci/> by logging in with your Github account.
-2.
+Below you can find the quick start guide for development.
+
+### Set up the environment
+
+1. Install [Poetry](https://python-poetry.org/docs/#installation)
+2. Authorize the Pre-Commit CI App by following the login link here: <https://pre-commit.ci/>
+   This will allow the CI to run the pre-commit hooks on your repository.
+3. Set up the environment:
+
+```bash
+make setup
+make activate
+```
+
+### Install new packages
+
+To install new PyPI packages, run:
+
+```bash
+poetry add <package-name>
+```
+
+### Auto-generate API documentation
+
+The Documentation is deployed to GitHub Pages when a Tag is included in the commit.
+You can do this easily by running:
+
+```bash
+poetry version <patch|minor|major>
+```
+
+To view the documentation locally, run:
+
+```bash
+make docs_view
+```
