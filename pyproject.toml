@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "python-template-demo"
+version = "0.1.0"
+description = "A Demo for the light-weight python template."
+authors = ["Moritz Mistol <moritz.mistol@gmail.com>"]
+readme = "README.md"
+documentation = "https://MoritzM00.github.io/python-template-demo"
+repository = "https://github.com/MoritzM00/python-template-demo"
+license = "MIT"
+keywords = ["Python", "Poetry"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7.2.2"
+black = ">=23.1.0"
+isort = ">=5.12.0"
+pre-commit = ">=3.1.1"
+pdoc3 = ">=0.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+
+[tool.isort]
+profile = "black"
+line_length = 88
