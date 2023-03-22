@@ -4,7 +4,8 @@
 def say_hello():
     """Return the string `Hello World!`.
 
-    A simple function that returns the string `Hello World!`.
+    A simple function that returns the string `Hello World!`
+    and demonstrates the documentation.
 
     Returns
     -------
