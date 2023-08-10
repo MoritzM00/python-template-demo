@@ -1,13 +1,18 @@
 initialize_git:
 	git init
 
+setup-env:
+	conda env create --file environment.yml
+	conda activate conda-env
+	poetry install
+
 install:
 	poetry config virtualenvs.in-project true
 	poetry install
 	poetry run pre-commit install
 
 activate:
-	poetry shell
+	conda env
 
 setup: initialize_git install
 

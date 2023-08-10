@@ -1,4 +1,4 @@
-# A Demo for the light-weight python template.
+# A Demo for the light-weight python template
 
 ![Tests](https://img.shields.io/github/actions/workflow/status/MoritzM00/python-template-demo/test.yaml?style=flat-square&label=Tests)
 ![Docs](https://img.shields.io/github/actions/workflow/status/MoritzM00/python-template-demo/deploy_docs.yaml?style=flat-square&label=Docs)
@@ -13,14 +13,28 @@
 
 Below you can find the quick start guide for development.
 
-### Set up the environment
+### How to use Conda with Poetry
 
-1. Install [Poetry](https://python-poetry.org/docs/#installation)
-2. Set up the environment:
+This version of the template uses Conda as the virtual environment, but Poetry is still the package manager. This works well together, as you just have to activate the conda environment and then run `poetry install`. Poetry automatically detects the conda environment and installs the packages there.
+
+#### Pre-requisites and Setup
+
+- [Poetry](https://python-poetry.org/docs/#installation)
+- Conda
 
 ```bash
 make setup
 make activate
+```
+
+#### How to add packages
+
+If you want to add a new package that is installed with conda, add the package to the `environment.yml` file and use the following commands to add them to the poetry configuration as well. Fix the package versions installed by Conda to prevent upgrades from poetry.
+
+For example, if you want to add pytorch to your project, run:
+
+```bash
+poetry add --lock torch=1.11.0
 ```
 
 ### Additional first-time setup
