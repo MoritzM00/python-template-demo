@@ -29,10 +29,11 @@ jobs:
           activate-environment: ${{ env.ENV_NAME }}
           environment-file: conda-linux-64.lock
 
-      - run: conda info
+      - run: |
+          conda info
+          conda list
 
       - name: Run tests
         run: |
-          conda activate $ENV_NAME
           poetry run pytest
 #
