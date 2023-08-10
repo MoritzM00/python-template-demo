@@ -22,19 +22,43 @@ This version of the template uses Conda as the virtual environment, but Poetry i
 - [Poetry](https://python-poetry.org/docs/#installation)
 - Conda
 
+Note: `conda activate` is a pain to use in makefile, so run this command these commands in this order:
+
+Replace `<<env_name>>` with the name of your environment and `<<os>>` with the corresponding OS specific lock file, e.g. `linux-64` or `osx-arm64` or
+(recommended)
+You can set these as environment variables as well to avoid having to type them every time, e.g.:
+
 ```bash
-make setup
-make activate
+export env_name=conda-env
+export os=osx-arm64
+```
+
+Then run:
+
+```bash
+make create-env
+conda activate $env_name
+make install
 ```
 
 #### How to add packages
 
 If you want to add a new package that is installed with conda, add the package to the `environment.yml` file and use the following commands to add them to the poetry configuration as well. Fix the package versions installed by Conda to prevent upgrades from poetry.
 
-For example, if you want to add pytorch to your project, run:
+For example, if you want to add pytorch to your project, add `pytorch::pytorch=2.0.1` to the `environment.yml` file and run:
 
 ```bash
-poetry add --lock torch=1.11.0
+poetry add --lock torch=2.0.1
+```
+
+and update the environment files (see next).
+
+#### Update the environment
+
+Make sure the environment is activated and run:
+
+```bash
+make update-env
 ```
 
 ### Additional first-time setup

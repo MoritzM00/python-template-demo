@@ -1,20 +1,19 @@
 initialize_git:
 	git init
 
-setup-env:
-	conda env create --file environment.yml
-	conda activate conda-env
-	poetry install
+create-env:
+	conda create --name $(env_name) --file conda-$(os).lock
+
+update-env:
+	@echo "Re-generate Conda lock file(s) based on environment.yml"
+	@conda-lock -k explicit --conda mamba
+	@echo "Update Conda packages based on re-generated lock file"
+	@mamba update --file conda-$(os).lock
+	@echo "Update Poetry packages and re-generate poetry.lock"
+	@poetry update
 
 install:
-	poetry config virtualenvs.in-project true
 	poetry install
-	poetry run pre-commit install
-
-activate:
-	conda env
-
-setup: initialize_git install
 
 test:
 	poetry run pytest
