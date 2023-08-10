@@ -41,17 +41,8 @@ jobs:
           activate-environment: ${{ env.ENV_NAME }}
           environment-file: conda-linux-64.lock
 
-      - run: |
-          conda info
-          conda list
-
-      - name: poetry info
-        run: poetry env info
-
       - name: Install packages
-        run: |
-          conda activate $ENV_NAME
-          make install
+        run: make install
 
       - name: Build docs
         run: poetry run pdoc src --html -f -o docs
