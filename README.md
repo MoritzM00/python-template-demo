@@ -11,7 +11,7 @@
 
 ## Quick Start
 
-Below you can find the quick start guide for development.
+This guide shows how to use conda with poetry efficiently and how to setup the project for GitHub Pages and Pre-Commit CI.
 
 ### How to use Conda with Poetry
 
@@ -51,7 +51,6 @@ For example, if you want to add pytorch to your project, add `pytorch::pytorch=2
 poetry add --lock torch=2.0.1
 ```
 
-
 and update the environment files (see next).
 Other packages that do not require conda install should be added via poetry as usual.
 
@@ -65,7 +64,36 @@ make update-env
 
 ### Additional first-time setup
 
-1. After setting up the environment, commit the `poetry.lock` file to your repository, so that the workflow on github can use it.
+Follow these steps once to setup the repository for GitHub Pages and Pre-Commit CI.
+
+#### Creating the conda lock-files for the first time
+
+If you do not have mamba, conda-lock and poetry installled, use the following bootstrap environment to create the lock files:
+
+```bash
+conda create -p /tmp/bootstrap -c conda-forge mamba conda-lock poetry='1.*'
+conda activate /tmp/bootstrap
+```
+
+Then run
+
+```bash
+conda-lock -k explicit --conda mamba
+```
+
+and remove the bootstrap environment:
+
+```bash
+conda deactivate
+rm -rf /tmp/bootstrap
+```
+
+Finally, commit the lock files to your repository.
+From this point on, you can use the described workflow to create and update the lock files from above.
+
+#### Setting up GitHub Pages and Pre-Commit CI
+
+1. Make sure that all lockfiles are up to date and committed.
 2. Enable [Pre-Commit CI](https://pre-commit.ci/) for your repository.
 3. Enable **Github Pages** for your documentation.
    To do that, go to the _Settings_ tab of your repository and scroll down to the _GitHub Pages_ section.
