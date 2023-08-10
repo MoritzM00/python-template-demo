@@ -1,5 +1,5 @@
 """Test the `main` module."""
-import pytorch  # noqa
+import torch  # noqa
 
 from src.main import say_hello
 
