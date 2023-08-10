@@ -18,6 +18,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+env:
+  ENV_NAME: conda-env
+
 jobs:
   test:
     uses: ./.github/workflows/test.yaml
@@ -40,6 +43,9 @@ jobs:
           auto-update-conda: false
           activate-environment: ${{ env.ENV_NAME }}
           environment-file: conda-linux-64.lock
+
+      - name: Install packages
+        run: poetry install
 
       - name: Build docs
         run: poetry run pdoc src --html -f -o docs

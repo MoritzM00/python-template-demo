@@ -32,11 +32,6 @@ jobs:
       - name: Install Pip packages
         run: poetry install
 
-      - run: |
-          conda info
-          conda list
-
       - name: Run tests
-        run: |
-          poetry run pytest
+        run: poetry run pytest
 #
