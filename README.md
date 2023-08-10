@@ -51,7 +51,9 @@ For example, if you want to add pytorch to your project, add `pytorch::pytorch=2
 poetry add --lock torch=2.0.1
 ```
 
+
 and update the environment files (see next).
+Other packages that do not require conda install should be added via poetry as usual.
 
 #### Update the environment
 
