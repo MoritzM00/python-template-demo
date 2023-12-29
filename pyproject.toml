@@ -8,6 +8,9 @@ documentation = "https://MoritzM00.github.io/python-template-demo"
 repository = "https://github.com/MoritzM00/python-template-demo"
 license = "MIT"
 keywords = ["Python", "Poetry"]
+packages = [
+    { include = "template_demo", from = "." }
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
