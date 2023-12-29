@@ -42,20 +42,18 @@ jobs:
         with:
           python-version: 3.9
           cache: "poetry"
+
       - name: Install packages
         run: poetry install
 
       - name: Build docs
-        run: poetry run pdoc src --html -f -o docs
-
-      - name: Move docs
-        run: mv docs/src/* docs && rm -rf docs/src
+        run: make docs_save
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
           path: 'docs/'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-#
