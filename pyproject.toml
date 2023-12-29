@@ -21,17 +21,42 @@ pytest = ">=7.2.2"
 pre-commit = ">=3.1.1"
 pdoc3 = ">=0.10.0"
 black = ">=23.1.0"
+ruff = ">=0.1.9"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.black]
+[tool.ruff]
 line-length = 88
+# extend-exclude = ["tests/"]
 
-[tool.isort]
-profile = "black"
-line_length = 88
+[tool.ruff.extend-per-file-ignores]
+# Also ignore `E402` in all `__init__.py` files.
+"__init__.py" = ["E402"]
+
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    # pydocstyle
+    "D",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # pandas related
+    "PD",
+
+]
+
+[too.ruff.lint.pydocstyle]
+convetion = "numpy"
 
 [tool.pytest.ini_options]
 addopts = "-ra"
