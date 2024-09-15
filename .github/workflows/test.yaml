@@ -32,7 +32,7 @@ jobs:
         uses: astral-sh/setup-uv@v2
 
       - name: Install the project
-        run: uv sync --all-extras --dev
+        run: make install
 
       - name: Run linter
         run: uv run ruff check --output-format=github .

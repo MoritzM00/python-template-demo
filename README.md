@@ -1,4 +1,4 @@
-# A Demo for the light-weight python template.
+# A Demo for the light-weight python template
 
 ![Tests](https://img.shields.io/github/actions/workflow/status/MoritzM00/python-template-demo/test.yaml?style=flat-square&label=Tests)
 ![Docs](https://img.shields.io/github/actions/workflow/status/MoritzM00/python-template-demo/deploy_docs.yaml?style=flat-square&label=Docs)
