@@ -1,15 +1,12 @@
+setup: initialize_git install
+
 initialize_git:
 	git init
 
 install:
-	uv venv
+	uv sync --all-extras --dev
 	uv run pre-commit install
 	uv pip install -e .
-
-activate:
-	source .venv/bin/activate
-
-setup: initialize_git install activate
 
 test:
 	uv run pytest
