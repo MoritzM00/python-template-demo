@@ -2,23 +2,23 @@ initialize_git:
 	git init
 
 install:
-	poetry config virtualenvs.in-project true
-	poetry install
-	poetry run pre-commit install
+	uv venv
+	uv run pre-commit install
+	uv pip install -e .
 
 activate:
-	poetry shell
+	source .venv/bin/activate
 
-setup: initialize_git install
+setup: initialize_git install activate
 
 test:
-	poetry run pytest
+	uv run pytest
 
 docs_view:
-	poetry run pdoc template_demo --docformat numpy
+	uv run pdoc template_demo --docformat numpy
 
 docs_save:
-	poetry run pdoc template_demo -o docs --docformat numpy
+	uv run pdoc template_demo -o docs --docformat numpy
 
 ## Delete all compiled Python files
 clean:

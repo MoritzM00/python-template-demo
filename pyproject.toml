@@ -4,9 +4,20 @@ version = "0.1.0"
 description = "A Demo for the light-weight python template."
 authors = [{ name = "Moritz Mistol", email = "moritz.mistol@gmail.com" }]
 readme = "README.md"
-documentation = "https://MoritzM00.github.io/python-template-demo"
-repository = "https://github.com/MoritzM00/python-template-demo"
-license = "MIT"
+# documentation = "https://MoritzM00.github.io/python-template-demo"
+# repository = "https://github.com/MoritzM00/python-template-demo"
+license = { file = "LICENSE" }
+dependencies = ["numpy>=2.1.1"]
+requires-python = ">=3.10"
+
+
+[tool.uv]
+dev-dependencies = [
+    "pdoc>=14.7.0",
+    "pre-commit>=3.8.0",
+    "pytest>=8.3.3",
+    "ruff>=0.6.5",
+]
 
 [tool.ruff]
 line-length = 88
