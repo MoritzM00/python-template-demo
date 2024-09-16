@@ -6,7 +6,6 @@ initialize_git:
 install:
 	uv sync --all-extras --dev
 	uv run pre-commit install
-	uv pip install -e .
 
 test:
 	uv run pytest
